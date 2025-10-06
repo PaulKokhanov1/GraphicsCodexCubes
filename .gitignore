@@ -1,0 +1,6 @@
+x64
+build
+*.db
+*.opendb
+data-files\log.txt
+data-files\g3d-license.txt
