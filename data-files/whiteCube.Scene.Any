@@ -5,7 +5,7 @@
 
 	models = {
 		cubeModel = ArticulatedModel::Specification {
-			filename = "model/cube/cube.obj";
+			filename = "model/crate/crate.obj";
 			preprocess = {
 				setMaterial(all(), Color3(1,1,1));
 			};
@@ -30,7 +30,7 @@
 
 		cube0 = VisibleEntity{
 			model = "cubeModel";
-			frame = CFrame::fromXYZYPRDegrees(0, 0, 0, 0, 0, 0);
+			frame = CFrame::fromXYZYPRDegrees(0, 0, -2, 45, 0, 0);	// Away from the camera starting pos, 45 rotated in vertical axis
 		};
 
 		camera = Camera{

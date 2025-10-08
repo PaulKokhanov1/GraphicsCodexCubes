@@ -1,64 +1,167 @@
+
 /* -*- c++ -*- */
 { 
-    name = "Test Scene"; 
-
+    description = ""; 
     entities = { 
-        ground = VisibleEntity {
-            model = "groundModel";
-            frame = CFrame::fromXYZYPRDegrees(0,0,0,0,-90,0);
-        };
-
-        camera = Camera {             
-            frame = CFrame::fromXYZYPRDegrees(  1.7f,   0.6f,   1.9f,  41.0f,  -5.0f,   0.0f); 
+        camera = Camera { 
+            depthOfFieldSettings = DepthOfFieldSettings { 
+                enabled = true; 
+                farBlurRadiusFraction = 0.005; 
+                farBlurryPlaneZ = -100; 
+                farSharpPlaneZ = -40; 
+                focusPlaneZ = -10; 
+                lensRadius = 0.01; 
+                model = "NONE"; 
+                nearBlurRadiusFraction = 0.015; 
+                nearBlurryPlaneZ = -0.25; 
+                nearSharpPlaneZ = -1; 
+                reducedResolutionFactor = 1; 
+            }; 
+            
+            filmSettings = FilmSettings { 
+                antialiasingEnabled = true; 
+                antialiasingFilterRadius = 0; 
+                antialiasingHighQuality = true; 
+                bloomRadiusFraction = 0.015; 
+                bloomStrength = 0.25; 
+                debugZoom = 1; 
+                downscaleFilter = "BILINEAR"; 
+                effectsEnabled = true; 
+                gamma = 2.2; 
+                invertX = false; 
+                invertY = false; 
+                sensitivity = 1; 
+                temporalAntialiasingEnabled = false; 
+                toneCurve = Spline { 
+                    control = ( 0, 0.1, 0.2, 0.5, 1 ); 
+                    extrapolationMode = "LINEAR"; 
+                    finalInterval = -1; 
+                    interpolationMode = "CUBIC"; 
+                    time = ( 0, 0.1, 0.2, 0.5, 1 ); 
+                }; 
+                
+                upscaleFilter = "BILINEAR"; 
+                vignetteBottomStrength = 0.05; 
+                vignetteSizeFraction = 0.17; 
+                vignetteTopStrength = 0.5; 
+            }; 
+            
+            frame = CFrame::fromXYZYPRDegrees(1.7, 0.6, 1.9, 41, -5, 0 ); 
+            mass = 1; 
+            motionBlurSettings = MotionBlurSettings { 
+                enabled = false; 
+                exposureFraction = 0.75; 
+                maxBlurDiameterFraction = 0.1; 
+                numSamples = 27; 
+            }; 
+            
+            overridePixelOffset = true; 
+            projection = Projection { 
+                farPlaneZ = -150; 
+                fovDegrees = 90; 
+                fovDirection = "HORIZONTAL"; 
+                nearPlaneZ = -0.15; 
+                pixelOffset = Vector2(0, 0 ); 
+            }; 
+            
+            visualizationScale = 1; 
+        }; 
+        
+        car = VisibleEntity { 
+            canCauseCollisions = true; 
+            frame = CFrame::fromXYZYPRDegrees(0.636636, 0, -0.853491, 0, 61.8989 ); 
+            mass = 1; 
+            model = "carModel"; 
+        }; 
+        
+        ground = VisibleEntity { 
+            canCauseCollisions = true; 
+            frame = CFrame::fromXYZYPRDegrees(0, 0, 0, 0, -90, 0 ); 
+            mass = 1; 
+            model = "groundModel"; 
         }; 
         
         skybox = Skybox { 
+            mass = 1; 
             texture = "cubemap/noonclouds/noonclouds_*.png"; 
-        };
-
-        car = VisibleEntity {
-            model = "carModel";
-        };
+        }; 
         
         sun = Light { 
-            attenuation = (0, 0, 1); 
-            bulbPower = Power3(1e+6); 
-            shadowsEnabled = true; 
-			shadowMapBias = 0.01;
-            track = lookAt(Point3(-15, 200, 40), Point3(0, 0, 0));
-            shadowMapSize = Vector2int16(2048, 2048); 
-            spotHalfAngleDegrees = 4; 
+            attenuation = ( 0, 0, 1 ); 
+            bulbPower = Power3(1e+06 ); 
+            canCauseCollisions = true; 
+            mass = 1; 
             rectangular = true; 
+            shadowMapBias = 0.01; 
+            shadowMapSize = Vector2int16(2048, 2048 ); 
+            shadowsEnabled = true; 
+            spotHalfAngleDegrees = 4; 
+            track = lookAt(
+                Point3(-15, 200, 40 ), 
+                Point3(0, 0, 0 ) ); 
+            
             type = "SPOT"; 
         }; 
         
     }; 
+    
+    lightingEnvironment = LightingEnvironment { 
+        ambientOcclusionSettings = AmbientOcclusionSettings { 
+            bias = 0.02; 
+            blurRadius = 2; 
+            blurStepSize = 1; 
+            depthPeelSeparationHint = 0.01; 
+            edgeSharpness = 1; 
+            enabled = true; 
+            highQualityBlur = true; 
+            intensity = 1; 
+            monotonicallyDecreasingBilateralWeights = false; 
+            numSamples = 20; 
+            packBlurKeys = false; 
+            radius = 0.75; 
+            temporalFilterSettings = TemporalFilter::Settings { 
+                falloffEndDistance = 0.07; 
+                falloffStartDistance = 0.05; 
+                hysteresis = 0.9; 
+            }; 
+            
+            temporallyVarySamples = true; 
+            useDepthPeelBuffer = false; 
+            useNormalBuffer = true; 
+            useNormalsInBlur = true; 
+            zStorage = "HALF"; 
+        }; 
         
-    models = {
+        environmentMap = Texture::Specification { 
+            encoding = Texture::Encoding { 
+                readMultiplyFirst = 0.7; 
+            }; 
+            
+            filename = "cubemap/uffizi/uffizi*.jpg"; 
+        }; 
+        
+    }; 
+    
+    models = { 
+        carModel = ArticulatedModel::Specification { 
+            filename = "eracoon-lowpoly-vehicle/car-groupc-2.obj"; 
+            preprocess = { 
+                setMaterial("car-groupc-2-grey_Cube.904_carmaterial_silver/carmaterial_silver", UniversalMaterial::Specification { 
+                        glossy = Color4(
+                            Color3(0.04 ), 
+                            0.9 ); 
+                        
+                        lambertian = Color3(0.95, 0.35, 0.02 ); 
+                    } ) }; 
+            
+        }; 
+        
         groundModel = ArticulatedModel::Specification { 
             filename = "square.ifs"; 
             scale = 20; 
         }; 
-
-        carModel = ArticulatedModel::Specification {
-            filename = "eracoon-lowpoly-vehicle/car-groupc-2.obj";
-            preprocess = {
-                setMaterial("car-groupc-2-grey_Cube.904_carmaterial_silver/carmaterial_silver", 
-                    UniversalMaterial::Specification {
-                        lambertian = Color3(0.95, 0.35, 0.02);
-                        glossy = Color4(Color3(0.04), 0.9);
-                    });
-            };
-        };
-    };
-    
-    lightingEnvironment = LightingEnvironment { 
         
-        environmentMap = Texture::Specification { 
-            filename = "cubemap/uffizi/uffizi*.jpg";
-            encoding = Texture::Encoding {
-                readMultiplyFirst = 0.7;
-            };
-        };
     }; 
- } 
+    
+    name = "Test Scene"; 
+} 

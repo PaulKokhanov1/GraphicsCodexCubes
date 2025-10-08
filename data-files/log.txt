@@ -1,13 +1,13 @@
 Application Log
-Start: Tue Oct  7 20:20:32 2025
+Start: Tue Oct  7 21:36:36 2025
 
 WARNING: AudioDevice is not enabled. Set G3DSpecification::audio = true before invoking initGLG3D() to enable audio.
-Initializing System::findDataFile took 0.001931s
+Initializing System::findDataFile took 0.003652s
 
 Entering GApp::GApp()
 cwd = C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files
 System::setAppDataDir("C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files")
-System::setAppDataDirs()Initializing System::findDataFile took 0.000154s
+System::setAppDataDirs()Initializing System::findDataFile took 0.000841s
 Setting video mode
 wglSwapIntervalEXT(0);
 Setting initial rendering state.
@@ -614,6 +614,7 @@ Done GApp::loadFont(...)
 Done GApp::GApp()
 
 Found scenes:
+  "Cornell Box" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/cornellBox.Scene.Any)
   "Test Scene" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/test.Scene.Any)
   "White Cube" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/whiteCube.Scene.Any)
   "G3D Debug Animation (Skeletal)" (C:\Users\Vladimir\Downloads\GraphicsCodex\data10\common/scene/G3D_Debug_Animation_(Skeletal).Scene.Any)
@@ -686,6 +687,7 @@ Found scenes:
   "G3D VR Bedroom" (C:\Users\Vladimir\Downloads\GraphicsCodex\data10\research/scene/G3D_VR_Bedroom.Scene.Any)
   "G3D VR Gallery" (C:\Users\Vladimir\Downloads\GraphicsCodex\data10\research/scene/G3D_VR_Gallery.Scene.Any)
 Found scenes:
+  "Cornell Box" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/cornellBox.Scene.Any)
   "Test Scene" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/test.Scene.Any)
   "White Cube" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/whiteCube.Scene.Any)
   "G3D Debug Animation (Skeletal)" (C:\Users\Vladimir\Downloads\GraphicsCodex\data10\common/scene/G3D_Debug_Animation_(Skeletal).Scene.Any)
@@ -801,6 +803,25 @@ Fragment info
 
 
 
+
+
+Vertex info
+-----------
+1(39) : warning C7050: "tex0" might be used before being initialized
+1(39) : warning C7050: "tex1" might be used before being initialized
+
+Vertex info
+-----------
+1(39) : warning C7050: "tex0" might be used before being initialized
+1(39) : warning C7050: "tex1" might be used before being initialized
+
+
+
+
+
+
+
+
 _____________________________________________________
 
     ###    Files Used    ###
@@ -819,12 +840,10 @@ postproc-55.dll
 swresample-3.dll
 swscale-5.dll
 fmod.dll
-C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/../journal/2025-10-07__000.jpg
-C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/../journal/2025-10-07__000_Testing_ss_feature.jpg
-C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/../journal/journal.md.html
-C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/../journal/journal.md.html
+C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/cornellBox.Scene.Any
 C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/icon.png
 C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/log.txt
+C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/test.Scene.Any
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/font/arial.fnt
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/font/console-small.fnt
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/font/greek.fnt
@@ -834,9 +853,12 @@ C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/icon/tango.icn
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AlphaFilter.glsl
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_AO.pix
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_AO.vrt
+C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_blur.pix
+C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_blur.vrt
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_constants.glsl
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_minify.pix
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_minify.vrt
+C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_packBilateralKey.glsl
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_reconstructCSZ.pix
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_reconstructCSZ.vrt
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/BumpMap/BumpMap.glsl
@@ -847,6 +869,7 @@ C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/DepthOfField/D
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/DepthOfField/DepthOfField_blur.pix
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/DepthOfField/DepthOfField_circleOfConfusion.pix
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/DepthOfField/DepthOfField_composite.pix
+C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/Film/Film_FXAA_13_quality.pix
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/Film/Film_bloomExpose.pix
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/Film/Film_composite.pix
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/Film/Film_effectsDisabledBlit.pix
@@ -856,8 +879,6 @@ C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/GBuffer/GBuffe
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/GFont/GFont_render.pix
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/GFont/GFont_render.vrt
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/GaussianBlur/GaussianBlur_apply.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/GuiTextureBox/GuiTextureBox_2D.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/GuiTextureBox/GuiTextureBox_Arrows.glsl
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/GuiTheme/GuiTheme_render.pix
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/GuiTheme/GuiTheme_render.vrt
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/Light/Light.glsl
@@ -903,6 +924,13 @@ C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/uffizi/uffizi+z.
 C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/uffizi/uffizi-x.jpg
 C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/uffizi/uffizi-y.jpg
 C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/uffizi/uffizi-z.jpg
+C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/whiteroom/whiteroom-NX.png
+C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/whiteroom/whiteroom-NY.png
+C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/whiteroom/whiteroom-NZ.png
+C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/whiteroom/whiteroom-PX.png
+C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/whiteroom/whiteroom-PY.png
+C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/whiteroom/whiteroom-PZ.png
+C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/ifs/square.ifs
 C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.ArticulatedModel.Any
 C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip
 C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/sponza.mtl
@@ -947,4 +975,11 @@ C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/spon
 C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/vase_round.png
 C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/vase_round_bump.png
 C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/scene/G3D_Sponza.Scene.Any
+C:/Users/Vladimir/Downloads/GraphicsCodex/data10/game/model/crate/crate.mtl
+C:/Users/Vladimir/Downloads/GraphicsCodex/data10/game/model/crate/crate.obj
+C:/Users/Vladimir/Downloads/GraphicsCodex/data10/game/model/crate/metalcrate-B.png
+C:/Users/Vladimir/Downloads/GraphicsCodex/data10/game/model/crate/metalcrate-G.png
+C:/Users/Vladimir/Downloads/GraphicsCodex/data10/game/model/crate/metalcrate-L.png
+C:/Users/Vladimir/Downloads/GraphicsCodex/data10/game/model/eracoon-lowpoly-vehicle/car-groupc-2.obj
+C:/Users/Vladimir/Downloads/GraphicsCodex/data10/game/model/eracoon-lowpoly-vehicle/car.mtl
 

@@ -22,6 +22,9 @@
     <None Include="data-files\whiteCube.Scene.Any">
       <Filter>Scene Files</Filter>
     </None>
+    <None Include="cornellBox.Scene.Any">
+      <Filter>Scene Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">

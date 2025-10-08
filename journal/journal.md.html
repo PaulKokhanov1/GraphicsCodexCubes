@@ -1,4 +1,5 @@
-   <meta charset="utf-8" emacsmode="-*- markdown -*-"><link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/journal.css?">
+<meta charset="utf-8" emacsmode="-*- markdown -*-">
+<link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/journal.css?">
                  **Development Journal**
 
 
@@ -9,6 +10,29 @@
 ![Testing ss feature](2025-10-07__000_Testing_ss_feature.jpg)
 
 F4 while in program to take SS and add caption and desc
+
+Ok so for project One I am starting now,
+first I want to find where all these things are located:
+models/crate/*, cubemap/whiteroom/whiteroom-*.png, and texture maps (images):
+
+the last two I found at: https://casual-effects.com/g3d/G3D10/build/manual/dataindex.html#Images
+
+but I cant find the path for models/
+
+nvm I just crashed the program and it showed me its at this path: C:\Users\Vladimir\Downloads\GraphicsCodex\data10\game\model 
+
+Ok I actually started the program at 9:06 pm today (was reading through report and othersection about the project first)
+
+finished today at 9:37 pm , almost done 2nd task
+
+Ok now lets talk about each scene:
+
+1. should be simple, will edit the whitecube scene file, slightly done already in the warmup guide
+    - it looks like coordinate axis is as follows Y/yaw(vertical), X/pitch(horizontal), Z/roll(towards starting camera pos)
+    - done
+2. ok so it seems that I need to create multiple instances of the cubes, I wonder if I can edit them directly in the editor
+    - ok gotcha, so basically we can work both in the editor and the scene files,
+    - to edit in the editor we need to disable the lock, then change the object and you want and then make sure to click the save button and it will edit the Scene file
 
 
 2019-03-01: Formatting Notes
@@ -22,10 +46,22 @@ in a web browser.
 Put the newest entry at the top of this file, like a blog. Begin the title of
 each section with a date in ISO format (YYYY-MM-DD).
 
-Press *F4* or *F6* in your G3D program to automatically add screenshots and video to 
+Press *F4* or *F6* in your G3D program to automatically add screenshots and video to
 this development journal.
 
 
 
-<style>em.asterisk { font-style: normal; font-weight: bold; }</style><style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
-<!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
+<style>
+    em.asterisk {
+        font-style: normal;
+        font-weight: bold;
+    }
+</style>
+<style class="fallback">
+    body {
+        visibility: hidden
+    }
+</style>
+<script>markdeepOptions = { tocStyle: 'long' };</script>
+<!-- Markdeep: -->
+<script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
