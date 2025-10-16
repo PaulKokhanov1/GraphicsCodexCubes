@@ -1,13 +1,13 @@
 Application Log
-Start: Tue Oct  7 21:36:36 2025
+Start: Wed Oct 15 21:39:13 2025
 
 WARNING: AudioDevice is not enabled. Set G3DSpecification::audio = true before invoking initGLG3D() to enable audio.
-Initializing System::findDataFile took 0.003652s
+Initializing System::findDataFile took 0.001213s
 
 Entering GApp::GApp()
 cwd = C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files
 System::setAppDataDir("C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files")
-System::setAppDataDirs()Initializing System::findDataFile took 0.000841s
+System::setAppDataDirs()Initializing System::findDataFile took 0.000167s
 Setting video mode
 wglSwapIntervalEXT(0);
 Setting initial rendering state.
@@ -615,6 +615,7 @@ Done GApp::GApp()
 
 Found scenes:
   "Cornell Box" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/cornellBox.Scene.Any)
+  "StairCase" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/stairCase.Scene.Any)
   "Test Scene" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/test.Scene.Any)
   "White Cube" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/whiteCube.Scene.Any)
   "G3D Debug Animation (Skeletal)" (C:\Users\Vladimir\Downloads\GraphicsCodex\data10\common/scene/G3D_Debug_Animation_(Skeletal).Scene.Any)
@@ -688,6 +689,7 @@ Found scenes:
   "G3D VR Gallery" (C:\Users\Vladimir\Downloads\GraphicsCodex\data10\research/scene/G3D_VR_Gallery.Scene.Any)
 Found scenes:
   "Cornell Box" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/cornellBox.Scene.Any)
+  "StairCase" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/stairCase.Scene.Any)
   "Test Scene" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/test.Scene.Any)
   "White Cube" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/whiteCube.Scene.Any)
   "G3D Debug Animation (Skeletal)" (C:\Users\Vladimir\Downloads\GraphicsCodex\data10\common/scene/G3D_Debug_Animation_(Skeletal).Scene.Any)
@@ -803,13 +805,6 @@ Fragment info
 
 
 
-
-
-Vertex info
------------
-1(39) : warning C7050: "tex0" might be used before being initialized
-1(39) : warning C7050: "tex1" might be used before being initialized
-
 Vertex info
 -----------
 1(39) : warning C7050: "tex0" might be used before being initialized
@@ -840,10 +835,11 @@ postproc-55.dll
 swresample-3.dll
 swscale-5.dll
 fmod.dll
-C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/cornellBox.Scene.Any
 C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/icon.png
 C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/log.txt
-C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/test.Scene.Any
+C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/stairCase.Scene.Any
+C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/stairCase.Scene.Any
+C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/wood.png
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/font/arial.fnt
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/font/console-small.fnt
 C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/font/greek.fnt
@@ -930,7 +926,6 @@ C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/whiteroom/whiter
 C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/whiteroom/whiteroom-PX.png
 C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/whiteroom/whiteroom-PY.png
 C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/whiteroom/whiteroom-PZ.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/ifs/square.ifs
 C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.ArticulatedModel.Any
 C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip
 C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/sponza.mtl
@@ -980,6 +975,4 @@ C:/Users/Vladimir/Downloads/GraphicsCodex/data10/game/model/crate/crate.obj
 C:/Users/Vladimir/Downloads/GraphicsCodex/data10/game/model/crate/metalcrate-B.png
 C:/Users/Vladimir/Downloads/GraphicsCodex/data10/game/model/crate/metalcrate-G.png
 C:/Users/Vladimir/Downloads/GraphicsCodex/data10/game/model/crate/metalcrate-L.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/game/model/eracoon-lowpoly-vehicle/car-groupc-2.obj
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/game/model/eracoon-lowpoly-vehicle/car.mtl
 

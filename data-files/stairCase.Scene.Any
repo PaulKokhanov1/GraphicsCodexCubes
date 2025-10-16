@@ -1,0 +1,55 @@
+/* -*- c++ -*- */
+{
+	name = "StairCase"; 
+ 	models = { 
+		stairModel = ArticulatedModel::Specification { 
+			filename = "model/crate/crate.obj"; 
+			preprocess = { 
+				setMaterial(all(), 
+					UniversalMaterial::Specification { 
+						lambertian = "wood.png"; 
+					}; 
+				); 
+				transformGeometry(all(), Matrix4::scale(1, 2, 0.25 ) ); 
+			}; 
+		}; 
+	}; 
+
+	entities = { 
+		skybox = Skybox { 
+			texture = "cubemap/whiteroom/whiteroom-*.png"; 
+		};
+		sun = Light{ 
+			attenuation = (0, 0, 1); 
+			bulbPower = Power3(4e+006); 
+			frame = CFrame::fromXYZYPRDegrees(0, 0, 0, 0, 0, 0); 
+			shadowMapSize = Vector2int16(2048, 2048); 
+			spotHalfAngleDegrees = 5; 
+			rectangular = true; 
+			type = "SPOT"; 
+		};
+		camera = Camera{ 
+			frame = CFrame::fromXYZYPRDegrees(0,0,5); 
+		};
+		stair0 = VisibleEntity{ 
+			model = "stairModel"; 
+			frame = CFrame::fromXYZYPRDegrees(0, 0, 0.000000, 0, 0, 0); 
+		};
+		stair1 = VisibleEntity{ 
+			model = "stairModel"; 
+			frame = CFrame::fromXYZYPRDegrees(0, 0, 0.250000, 30, 0, 0); 
+		};
+		stair2 = VisibleEntity{ 
+			model = "stairModel"; 
+			frame = CFrame::fromXYZYPRDegrees(0, 0, 0.500000, 60, 0, 0); 
+		};
+		stair3 = VisibleEntity{ 
+			model = "stairModel"; 
+			frame = CFrame::fromXYZYPRDegrees(0, 0, 0.750000, 90, 0, 0); 
+		};
+		stair4 = VisibleEntity{ 
+			model = "stairModel"; 
+			frame = CFrame::fromXYZYPRDegrees(0, 0, 1.000000, 120, 0, 0); 
+		};
+	}; 
+}; 

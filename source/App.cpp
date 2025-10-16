@@ -91,6 +91,9 @@ void App::onInit() {
 #       endif
         );
 
+    createStaircaseSceneFile();
+
+
     // Make the GUI after the scene is loaded because loading/rendering/simulation initialize
     // some variables that advanced GUIs may wish to reference with pointers.
     makeGUI();
@@ -327,3 +330,71 @@ void App::onCleanup() {
     // Called after the application loop ends.  Place a majority of cleanup code
     // here instead of in the constructor so that exceptions can be caught.
 }
+
+// Creates a .Scene.Any file for a curving staircase
+void App::createStaircaseSceneFile()
+{
+    G3D::TextOutput stairs("stairCase.Scene.Any");
+
+    stairs.printf(
+        "/* -*- c++ -*- */\n"
+        "{\n"
+        "\tname = \"StairCase\"; \n "
+        "\tmodels = { \n"
+        "\t\tstairModel = ArticulatedModel::Specification { \n"
+        "\t\t\tfilename = \"model/crate/crate.obj\"; \n"
+        "\t\t\tpreprocess = { \n"
+        "\t\t\t\tsetMaterial(all(), \n"
+        "\t\t\t\t\tUniversalMaterial::Specification { \n"
+        "\t\t\t\t\t\tlambertian = \"wood.png\"; \n"
+        "\t\t\t\t\t}; \n"
+        "\t\t\t\t); \n"
+        "\t\t\t\ttransformGeometry(all(), Matrix4::scale(1, 2, 0.25 ) ); \n"
+        "\t\t\t}; \n"
+        "\t\t}; \n"
+        "\t}; \n"
+        "\n"
+        "\tentities = { \n"
+        "\t\tskybox = Skybox { \n"
+        "\t\t\ttexture = \"cubemap/whiteroom/whiteroom-*.png\"; \n"
+        "\t\t};"
+        "\n"
+        "\t\tsun = Light{ \n"
+        "\t\t\tattenuation = (0, 0, 1); \n"
+        "\t\t\tbulbPower = Power3(4e+006); \n"
+        "\t\t\tframe = CFrame::fromXYZYPRDegrees(0, 0, 0, 0, 0, 0); \n"
+        "\t\t\tshadowMapSize = Vector2int16(2048, 2048); \n"
+        "\t\t\tspotHalfAngleDegrees = 5; \n"
+        "\t\t\trectangular = true; \n"
+        "\t\t\ttype = \"SPOT\"; \n"
+        "\t\t};"
+        "\n"
+        "\t\tcamera = Camera{ \n"
+        "\t\t\tframe = CFrame::fromXYZYPRDegrees(0,0,5); \n"
+        "\t\t};"
+        "\n"
+    );
+
+    // Here create the rotation staircase going upwards
+    for (int i = 0; i < 5; ++i) {
+        stairs.printf(
+            "\t\tstair%i = VisibleEntity{ \n"
+            "\t\t\tmodel = \"stairModel\"; \n"
+            "\t\t\tframe = CFrame::fromXYZYPRDegrees(0, 0, %f, %i, 0, 0); \n"
+            "\t\t};"
+            "\n",
+            i, i*0.25,i*30
+
+        );
+    }
+
+
+    // Complete the closing brackets
+    stairs.printf(
+        "\t}; \n"
+        "}; \n"
+    );
+
+    stairs.commit();
+}
+
