@@ -92,6 +92,7 @@ void App::onInit() {
         );
 
     createStaircaseSceneFile();
+    createSpiralLandscapeSceneFile();
 
 
     // Make the GUI after the scene is loaded because loading/rendering/simulation initialize
@@ -349,7 +350,7 @@ void App::createStaircaseSceneFile()
         "\t\t\t\t\t\tlambertian = \"wood.png\"; \n"
         "\t\t\t\t\t}; \n"
         "\t\t\t\t); \n"
-        "\t\t\t\ttransformGeometry(all(), Matrix4::scale(1, 2, 0.25 ) ); \n"
+        "\t\t\t\ttransformGeometry(all(), Matrix4::scale(1.25, 0.25, 5 ) ); \n"
         "\t\t\t}; \n"
         "\t\t}; \n"
         "\t}; \n"
@@ -376,14 +377,14 @@ void App::createStaircaseSceneFile()
     );
 
     // Here create the rotation staircase going upwards
-    for (int i = 0; i < 5; ++i) {
+    for (int i = 0; i < 50; ++i) {
         stairs.printf(
             "\t\tstair%i = VisibleEntity{ \n"
             "\t\t\tmodel = \"stairModel\"; \n"
-            "\t\t\tframe = CFrame::fromXYZYPRDegrees(0, 0, %f, %i, 0, 0); \n"
+            "\t\t\tframe = CFrame::fromXYZYPRDegrees(0, %f, 0, %i, 0, 0); \n"
             "\t\t};"
             "\n",
-            i, i*0.25,i*30
+            i, i*0.25,i*17
 
         );
     }
@@ -397,4 +398,149 @@ void App::createStaircaseSceneFile()
 
     stairs.commit();
 }
+
+// Creates a .Scene.Any file for a curving staircase landscape
+void App::createSpiralLandscapeSceneFile()
+{
+    spirals = new G3D::TextOutput("spiral.Scene.Any");
+
+    spirals->printf(
+        "/* -*- c++ -*- */\n"
+        "{\n"
+        "\tname = \"Spirals\"; \n "
+        "\tmodels = { \n"
+        "\t\tspiralWood = ArticulatedModel::Specification { \n"
+        "\t\t\tfilename = \"model/crate/crate.obj\"; \n"
+        "\t\t\tpreprocess = { \n"
+        "\t\t\t\tsetMaterial(all(), \n"
+        "\t\t\t\t\tUniversalMaterial::Specification { \n"
+        "\t\t\t\t\t\tlambertian = \"wood.png\"; \n"
+        "\t\t\t\t\t}; \n"
+        "\t\t\t\t); \n"
+        "\t\t\t\ttransformGeometry(all(), Matrix4::scale(1.25, 0.25, 5 ) ); \n"
+        "\t\t\t}; \n"
+        "\t\t}; \n"
+        "\t\tspiralMetal = ArticulatedModel::Specification { \n"
+        "\t\t\tfilename = \"model/crate/crate.obj\"; \n"
+        "\t\t\tpreprocess = { \n"
+        "\t\t\t\tsetMaterial(all(), \n"
+        "\t\t\t\t\tUniversalMaterial::Specification { \n"
+        "\t\t\t\t\t\tlambertian = \"metal.png\"; \n"
+        "\t\t\t\t\t}; \n"
+        "\t\t\t\t); \n"
+        "\t\t\t\ttransformGeometry(all(), Matrix4::scale(1.25, 0.25, 5 ) ); \n"
+        "\t\t\t}; \n"
+        "\t\t}; \n"
+        "\t\tflatMetal = ArticulatedModel::Specification { \n"
+        "\t\t\tfilename = \"model/crate/crate.obj\"; \n"
+        "\t\t\tpreprocess = { \n"
+        "\t\t\t\tsetMaterial(all(), \n"
+        "\t\t\t\t\tUniversalMaterial::Specification { \n"
+        "\t\t\t\t\t\tlambertian = \"metal.png\"; \n"
+        "\t\t\t\t\t}; \n"
+        "\t\t\t\t); \n"
+        "\t\t\t\ttransformGeometry(all(), Matrix4::scale(500, 0.5, 500 ) ); \n"
+        "\t\t\t}; \n"
+        "\t\t}; \n"
+        "\t}; \n"
+        "\n"
+        "\tentities= { \n"
+        "\t\tskybox = Skybox { \n"
+        "\t\t\ttexture = \"cubemap/whiteroom/whiteroom-*.png\"; \n"
+        "\t\t};"
+        "\n"
+        "\n"
+        "\t\tcamera = Camera{ \n"
+        "\t\t\tframe = CFrame::fromXYZYPRDegrees(0,5,5,180,0,0); \n"
+        "\t\t};"
+        "\n"
+    );
+
+    spirals->printf(
+        "\t\tflatBot = VisibleEntity{ \n"
+        "\t\t\tmodel = \"flatMetal\"; \n"
+        "\t\t\tframe = CFrame::fromXYZYPRDegrees(0, -0.5, 0, 0, 0, 0); \n"
+        "\t\t};"
+        "\n"
+    );
+
+    spirals->printf(
+        "\t\tflatTop = VisibleEntity{ \n"
+        "\t\t\tmodel = \"flatMetal\"; \n"
+        "\t\t\tframe = CFrame::fromXYZYPRDegrees(0, 15, 0, 0, 0, 0); \n"
+        "\t\t};"
+        "\n"
+    );
+
+    createSpirals(*spirals);
+
+
+    // Complete the closing brackets
+    spirals->printf(
+        "\t}; \n"
+        "}; \n"
+    );
+
+    spirals->commit();
+}
+
+/*
+Random Number generator Utility function
+*/
+int randomNum(int minVal, int maxVal) {
+
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> distrib(minVal, maxVal);
+    int random_number = distrib(gen);
+
+    return random_number;
+}
+
+/*
+Automatically create Scene for Specifcaion 4
+*/
+void App::createSpirals(G3D::TextOutput& incomingFile) {
+
+    // create 30 different spirals
+    for (int j = 0; j < 30; ++j) {
+
+        int randomNumX = randomNum(0, 100);   // random position for our spirals cases, 0 to 100
+        int randomNumZ = randomNum(0, 100);
+
+        // Here create the rotation staircase going upwards
+        for (int i = 0; i < 50; ++i) {
+            incomingFile.printf(
+                "\t\tstairW%i= VisibleEntity{ \n"
+                "\t\t\tmodel= \"spiralWood\"; \n"
+                "\t\t\tframe= CFrame::fromXYZYPRDegrees(%i, %f, %i, %i, 0, 0); \n"
+                "\t\t};"
+                "\n",
+                (i * 30) + j, randomNumX, i * 0.25, randomNumZ, i * 17
+            );
+        }
+    }
+
+    // create 30 different spirals
+    for (int j = 0; j < 30; ++j) {
+
+        int randomNumX = randomNum(0, 100);   // random position for our spirals cases, 0 to 100
+        int randomNumZ = randomNum(0, 100);
+
+        // Here create the rotation staircase going upwards
+        for (int i = 0; i < 50; ++i) {
+            incomingFile.printf(
+                "\t\tstairM%i= VisibleEntity{ \n"
+                "\t\t\tmodel= \"spiralMetal\"; \n"
+                "\t\t\tframe= CFrame::fromXYZYPRDegrees(%i, %f, %i, %i, 0, 0); \n"
+                "\t\t};"
+                "\n",
+                (i * 30) + j, randomNumX, i * 0.25, randomNumZ, i * 9
+            );
+        }
+    }
+
+}
+
+
 

@@ -7,35 +7,116 @@ _style_. From https://casual-effects.com/markdeep.
 System Overview
 ===============================================================================
 
-Subsection
--------------------------------------------------------------------------------
+G3D is a engine used for creating 3D applciations such as games. This project was done using the starter template of G3D. 
+Within App.cpp the engine generates all key methods used for initilization of the 3D scenes aswell as callback methods to dynamically update the scene as needed.
+Wihtin App.cpp I added a couple functions, createStaircaseSceneFile() which was created to generate a spiral staircase .Scene.Any file automatically without any manual definition within the scene file.
+Next I added createSpiralLandscapeSceneFile(), which creates a scene file for a landscape of randomly positioned spiral staircases
+To support createSpiralLandscapeSceneFile() I added createSpirals() and randomNum(), the former randomly positions each spiral staircase, while the latter generates a random number given a range.
 
 
 Coordinate System
 ===============================================================================
 
-Subsection
--------------------------------------------------------------------------------
+![G3D Coordinate System](coordinate_system_G3D.jpeg)
 
 
 Results
 ===============================================================================
 
+White Cube Scene
+-------------------------------------------------------------------------------
+
+![White Cube Scene](white_cube_scene.png)
+
+Cornell Box Scene
+-------------------------------------------------------------------------------
+
+![Cornell Box Scene](cornell_box_scene.png)
+
+Staircase Scene
+-------------------------------------------------------------------------------
+
+![Staircase Scene](staircase_scene.png)
+
+Custom Scene 
+-------------------------------------------------------------------------------
+
+![Custom Scene](custom_scene.png)
+
 Custom Scene Process
 -------------------------------------------------------------------------------
+
+My process in creating my custom scene started with the plan. The only requirement was that it needed to be of my own design and atleast 20 cubes
+I opted to try and extend the idea of automating a scene creation, so I wanted to reuse the idea from specification 3. Though I wanted to add more of a design.
+I decdied to include textures and multiple staircases places in random positions on the x-z plane. I also intended to dynamically update their position throughout the runtime of the scene
+but after spending roughly an hour trying to parse an .Any file, I needed to save my time and finish the task. This desicion was because this project is mean't as an introduction
+hence spending too much time could potentially take away from the intention of the task which is to familarize yourself with the basic tools such as the GUI and creating scene files automatically
+
+I then extended the scene by adding a floor and ceiling using a metallic texture found online. It must be noted that G3D does not seem to come with certain textures,
+so it is the responsability of the developer to add the textures to the data-files folder appropriately.
 
 Equation (Using LaTeX)
 -------------------------------------------------------------------------------
 
+\begin{equation}
+    \frac{df(x)}{dx} = \lim_{h\to0} \begin{bmatrix}
+                                    \frac{f(x + h) - f(x - h)}{2h}
+                            \end{bmatrix}
+\end{equation}
+
+
 Questions
 ===============================================================================
+
+
+    1. What are the differences between the Scene* and shared_ptr<scene> data types in C++?
+
+    A shared_ptr is known as a smart pointer which autmoatically manages memory. The object the shared pointer is pointing to holds an internal count of the number of shared_ptr's whcih when reaches 0, automatically deallocates the object and frees memory.
+    Scene* is a raw pointer. These pointers require manual memory mangamenet, using keywords such as 'new' and 'delete' to safely allocate and deallocate the memory
+
+
+    2. How does G3D know where the scene files are located?
+
+    We set the data directory in the settings class defined in GApp.h. Then we can manuall load the scene using loadScene in our App.cpp OR the SceneEditorWindow will invoke
+    this method automatically when the user chooses the specific scene from the gui passing in the scene name
+
+    3. Why should you to put your initialization code into App::onInit instead of constructor App::App? (Tip: There are many reasons. Try throwing an exception from each, and consider the implications of throwing an exception from a class's constructor.)
+
+    If you throw an exception in a constructor there is a risk the object will not be fully initialized and thus its possible certain memory may not be released leading to memory leaks
+
+    4. What is the call chain that invokes App::onGraphics3D?
+
+     GApp::run -> GApp::onInit -> GApp::onGraphics3D
+
+    5. Where is the file cube.obj stored on the file system? How did the Scene parser know to load it from there?
+
+    the sub.obj is stored at GraphicsCodex\data10\common\model\cube , the parser knows to load it from there because the common directory is where the parser is set to search from.
+    This is most likely defined in the engine's config settings
+
+
+    6. You can create a material in a scene file from a Color3. There are many more ways to construct a G3D material, however. One of these takes separate lambertian, glossy, emissive, and transmissive values. Speculate on why a homogeneous material (i.e., one without a pattern or image) would require four separate “colors” in its specification. 
+
+    This may be due to the different color the object is emitting when creating the specified effect. For example, a "glossy" property would emit a seperate color to show this property rather than the emissive property.
+    Since we "simulate" reality, not exactly "re-create" it, so each material cannot inheriently create the properties seen in a real-life material but instead we need to make it look real by using seperate colors to showcase sperate properties
+
 
 Reflection
 ===============================================================================
 
+    - Throughout the readings I re-familarized myself with typical C++ conventions and optimizations aswell as version control. I learned breifly about the rendering equation and how it is an infinitely recursive equation that is better to be approximated than attempted to solve directly
+    - In this project I learned about Scene files, how to create them, how to edit them at run-time or via the file. I also learned how to directly create scene files from code.
+    - Furthermore, I also familarized myself with the G3D engine breifly and learned about the high-level functionality of the engine.
+
 Time
 ===============================================================================
+    Overall this project took me 9 hours and 16 minutes
 
+    Alot of time was dedicated to researching the engine documentation and also attempting to automatically move obejcts in the scene files via code, that ultimately ended up failing
+
+    - roughly 1 hour and 30 minutes was spent on the report
+    - 2 hours was spent on the unimplmented real-time movement of scene objects
+    - 1 hour was spent on the warm up and reading through the initial documentation
+    - The remaining time was allocated to the specifications and reading documentation
 
 
 <!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js?" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>

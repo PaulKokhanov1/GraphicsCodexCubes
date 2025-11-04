@@ -1,13 +1,13 @@
 Application Log
-Start: Wed Oct 15 21:39:13 2025
+Start: Mon Nov  3 16:54:04 2025
 
 WARNING: AudioDevice is not enabled. Set G3DSpecification::audio = true before invoking initGLG3D() to enable audio.
-Initializing System::findDataFile took 0.001213s
+Initializing System::findDataFile took 0.001585s
 
 Entering GApp::GApp()
 cwd = C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files
 System::setAppDataDir("C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files")
-System::setAppDataDirs()Initializing System::findDataFile took 0.000167s
+System::setAppDataDirs()Initializing System::findDataFile took 0.000182s
 Setting video mode
 wglSwapIntervalEXT(0);
 Setting initial rendering state.
@@ -598,7 +598,7 @@ Network StartupSystem = {
         Adapter0 ={ 
             hostname = "LAPTOP-1FGN93R8;"
             name = ";"
-            ip = "192.168.  0. 14"; 
+            ip = "192.168. 56.  1"; 
             subnet = "  0.  0.255.255"; 
             broadcast = "255.255.255.255"; 
             mac = "00:00:00:00:00:00"; 
@@ -615,6 +615,7 @@ Done GApp::GApp()
 
 Found scenes:
   "Cornell Box" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/cornellBox.Scene.Any)
+  "Spirals" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/spiral.Scene.Any)
   "StairCase" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/stairCase.Scene.Any)
   "Test Scene" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/test.Scene.Any)
   "White Cube" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/whiteCube.Scene.Any)
@@ -689,6 +690,7 @@ Found scenes:
   "G3D VR Gallery" (C:\Users\Vladimir\Downloads\GraphicsCodex\data10\research/scene/G3D_VR_Gallery.Scene.Any)
 Found scenes:
   "Cornell Box" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/cornellBox.Scene.Any)
+  "Spirals" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/spiral.Scene.Any)
   "StairCase" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/stairCase.Scene.Any)
   "Test Scene" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/test.Scene.Any)
   "White Cube" (C:\Users\Vladimir\Documents\GitHub\GraphicsCodexCubes\data-files/whiteCube.Scene.Any)
@@ -786,193 +788,4 @@ Vertex info
 
 
 
-
-Fragment info
--------------
-1(58) : warning C7050: "focusPlaneZ" might be used before being initialized
-1(59) : warning C7050: "scale" might be used before being initialized
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Vertex info
------------
-1(39) : warning C7050: "tex0" might be used before being initialized
-1(39) : warning C7050: "tex1" might be used before being initialized
-
-
-
-
-
-
-
-
-_____________________________________________________
-
-    ###    Files Used    ###
-
-cudart64_102.dll
-embree.dll
-optix.6.0.0.dll
-tbb.dll
-tbbmalloc.dll
-avcodec-58.dll
-avdevice-58.dll
-avfilter-7.dll
-avformat-58.dll
-avutil-56.dll
-postproc-55.dll
-swresample-3.dll
-swscale-5.dll
-fmod.dll
-C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/icon.png
-C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/log.txt
-C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/stairCase.Scene.Any
-C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/stairCase.Scene.Any
-C:/Users/Vladimir/Documents/GitHub/GraphicsCodexCubes/data-files/wood.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/font/arial.fnt
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/font/console-small.fnt
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/font/greek.fnt
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/font/icon.fnt
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/gui/osx-10.7.gtm
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/icon/tango.icn
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AlphaFilter.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_AO.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_AO.vrt
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_blur.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_blur.vrt
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_constants.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_minify.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_minify.vrt
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_packBilateralKey.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_reconstructCSZ.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_reconstructCSZ.vrt
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/BumpMap/BumpMap.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/Camera/Camera.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/DDGIVolume/DDGIVolume.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/DefaultRenderer/DefaultRenderer_deferredShade.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/DepthOfField/DepthOfField.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/DepthOfField/DepthOfField_blur.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/DepthOfField/DepthOfField_circleOfConfusion.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/DepthOfField/DepthOfField_composite.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/Film/Film_FXAA_13_quality.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/Film/Film_bloomExpose.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/Film/Film_composite.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/Film/Film_effectsDisabledBlit.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/Film/Film_temporalAA.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/Film/Film_toneMap.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/GBuffer/GBuffer.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/GFont/GFont_render.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/GFont/GFont_render.vrt
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/GaussianBlur/GaussianBlur_apply.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/GuiTheme/GuiTheme_render.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/GuiTheme/GuiTheme_render.vrt
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/Light/Light.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/LightingEnvironment/LightingEnvironment_LightUniforms.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/LightingEnvironment/LightingEnvironment_environmentMapUniforms.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/SkyboxSurface/SkyboxSurface_gbuffer.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/SkyboxSurface/SkyboxSurface_gbuffer.vrt
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/TemporalFilter/TemporalFilter_apply.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/Texture/Texture.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/Texture/Texture_copy.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/UniversalMaterial/UniversalMaterial.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/UniversalMaterial/UniversalMaterial_sample.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/UniversalMaterial/UniversalMaterial_writeToGBuffer.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/UniversalSurface/UniversalSurface_depthOnly.vrt
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/UniversalSurface/UniversalSurface_depthOnlyNonOpaque.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/UniversalSurface/UniversalSurface_fragmentInputs.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/UniversalSurface/UniversalSurface_gbuffer.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/UniversalSurface/UniversalSurface_gbuffer.vrt
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/UniversalSurface/UniversalSurface_vertex.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/UniversalSurface/UniversalSurface_vertexHelpers.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/UniversalSurface/UniversalSurface_vertexOutputs.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/compatibility.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/default.vrt
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/deferredHelpers.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/depthPeel.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/g3dmath.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/lightMap.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/octahedral.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/reconstructFromDepth.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/reverseReprojection.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/textureFilter.glsl
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/unlit.pix
-C:/Users/Vladimir/Downloads/GraphicsCodex/G3D10/data-files/shader/unlit.vrt
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/noonclouds/noonclouds_bk.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/noonclouds/noonclouds_dn.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/noonclouds/noonclouds_ft.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/noonclouds/noonclouds_lf.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/noonclouds/noonclouds_rt.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/noonclouds/noonclouds_up.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/uffizi/uffizi+x.jpg
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/uffizi/uffizi+y.jpg
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/uffizi/uffizi+z.jpg
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/uffizi/uffizi-x.jpg
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/uffizi/uffizi-y.jpg
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/uffizi/uffizi-z.jpg
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/whiteroom/whiteroom-NX.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/whiteroom/whiteroom-NY.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/whiteroom/whiteroom-NZ.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/whiteroom/whiteroom-PX.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/whiteroom/whiteroom-PY.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/cubemap/whiteroom/whiteroom-PZ.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.ArticulatedModel.Any
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/sponza.mtl
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/sponza.obj
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/background.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/background_bump.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/chain_texture.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/chain_texture_bump.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/chain_texture_mask.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/floor_gloss.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/lion.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/lion_bump.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/spnza_bricks_a_bump.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/spnza_bricks_a_diff.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/spnza_bricks_a_spec.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_arch_diff.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_ceiling_a_diff.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_column_a_bump.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_column_a_diff.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_column_b_bump.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_column_b_diff.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_column_c_bump.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_column_c_diff.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_curtain_blue_diff.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_curtain_diff.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_curtain_green_diff.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_details_diff.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_fabric_blue_diff.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_fabric_diff.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_fabric_green_diff.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_flagpole_diff.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_floor_a_diff.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_roof_diff.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_thorn_bump.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_thorn_diff.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/sponza_thorn_mask.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/vase_bump.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/vase_dif.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/vase_hanging.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/vase_plant.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/vase_plant_mask.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/vase_round.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/model/crytek_sponza/sponza.zip/textures/vase_round_bump.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/common/scene/G3D_Sponza.Scene.Any
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/game/model/crate/crate.mtl
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/game/model/crate/crate.obj
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/game/model/crate/metalcrate-B.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/game/model/crate/metalcrate-G.png
-C:/Users/Vladimir/Downloads/GraphicsCodex/data10/game/model/crate/metalcrate-L.png
 

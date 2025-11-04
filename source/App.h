@@ -6,6 +6,7 @@
  */
 #pragma once
 #include <G3D/G3D.h>
+#include <random>
 
 /** \brief Application framework. */
 class App : public GApp {
@@ -34,5 +35,15 @@ public:
     virtual void onUserInput(UserInput* ui) override;
     virtual void onCleanup() override;
 
+    /** Creates Staircase Specification 3 Scene.Any file */
     void createStaircaseSceneFile();
+
+    /** Creates Own Scene Specification 4 Scene.Any file */
+    void createSpiralLandscapeSceneFile();
+    void createSpirals(G3D::TextOutput& incomingFile);
+
+
+private:
+
+    G3D::TextOutput* spirals = nullptr;
 };

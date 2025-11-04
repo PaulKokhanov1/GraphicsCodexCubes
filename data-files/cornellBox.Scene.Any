@@ -92,18 +92,6 @@
             mass = 0.1; 
             texture = "cubemap/whiteroom/whiteroom-*.png"; 
         }; 
-        
-
-        //sun = Light{
-        //    attenuation = (0, 0, 1);
-        //    bulbPower = Power3(4e+001);
-        //    frame = CFrame::fromXYZYPRDegrees(0, 1.5, 0, 0, 270, 0);
-        //    shadowMapSize = Vector2int16(2048, 2048);
-        //    spotHalfAngleDegrees = 50;
-        //    rectangular = true;
-        //    type = "SPOT";
-
-        //};
 
         light = Light{
             attenuation = (0.0001, 0, 1);

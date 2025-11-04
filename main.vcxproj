@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="data-files\cornellBox.Scene.Any" />
+    <None Include="data-files\spiral.Scene.Any" />
     <None Include="data-files\stairCase.Scene.Any" />
     <None Include="data-files\test.Scene.Any" />
     <None Include="data-files\whiteCube.Scene.Any" />

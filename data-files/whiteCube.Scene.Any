@@ -7,11 +7,7 @@
 		cubeModel = ArticulatedModel::Specification {
 			filename = "model/crate/crate.obj";
 			preprocess = {
-				setMaterial(all(),
-					UniversalMaterial::Specification {
-						lambertian = "wood.png";
-					};
-				);
+				setMaterial(all(), Color3(1, 1, 1));
 			};
 		};
 	};
@@ -21,16 +17,6 @@
 			texture = "cubemap/whiteroom/whiteroom-*.png";
 		};
 
-		sun = Light{
-			attenuation = (0, 0, 1);
-			bulbPower = Power3(4e+006);
-			frame = CFrame::fromXYZYPRDegrees(-15, 207, -41, -164, -77, 77);
-			shadowMapSize = Vector2int16(2048, 2048);
-			spotHalfAngleDegrees = 5;
-			rectangular = true;
-			type = "SPOT";
-
-		};
 
 		cube0 = VisibleEntity{
 			model = "cubeModel";
